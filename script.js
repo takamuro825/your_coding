@@ -9,7 +9,6 @@ $(function(){
 
 
 // ----------swiper---------------
-
 var swiper = new Swiper('.swiper-container', {
   loop: true,
   speed: 1000,
@@ -17,24 +16,43 @@ var swiper = new Swiper('.swiper-container', {
   spaceBetween: 10,
   centerdSlides : true,
   autoplay: {
-      delay: 4000,
+      delay: 3000,
       disableOnInteraction: false,
   },
-  breakpoints: {
-    767: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-      autoplay: {
-        delay: 5000,
-      },
-    }
-  },
+  
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      autoplay: {
+        delay: 3000,
+      }
+    },
+      1000: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      480: {
+        slidesPerView: 1,
+      }
   }
-  
+
 });
+
+
+
+
+
+
+
+
+
 // -----------------------------------------------
 
 
@@ -68,7 +86,7 @@ $(document).ready(function () {
 
 });
 
-// 縺雁撫蜷医○螳御ｺ�Γ繝�そ繝ｼ繧ｸ
+// お問合せ完了メッセージ
 
 $(document).ready(function () {
 
