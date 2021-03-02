@@ -27,9 +27,8 @@
   .header .global-nav {
     display: block;
   }
+  
   .main {
-    background-image: url(/image/1.png);
-    background-size: 1000px;
   }
   .main-inner {
     -webkit-box-orient: vertical;
