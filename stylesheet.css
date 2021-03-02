@@ -1,7 +1,16 @@
 @charset "UTF-8";
 @media screen and (max-width: 768px) {
-  body {
-    margin: 0 10px;
+  .sp-br {
+    display: block;
+  }
+  .main .pc-br {
+    display: none;
+  }
+  .feature .sp-br {
+    display: block;
+  }
+  .pc-br {
+    display: none;
   }
   .header .header-nav {
     display: none;
@@ -105,6 +114,9 @@
   }
   .works .works-container {
     max-width: 450px;
+  }
+  .input-txt {
+    min-width: 100%;
   }
   .footer .footer-flex {
     display: block;
@@ -220,20 +232,47 @@
 
 .contact-btn {
   width: 155px;
-  height: 37px;
   background: -webkit-gradient(linear, left top, right top, from(#fa41cc), to(#6020b0));
   background: linear-gradient(to right, #fa41cc, #6020b0);
   color: #fff;
   border-radius: 10px;
   display: block;
   text-align: center;
-  line-height: 37px;
+  padding: 10px 3px;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
+/* スクロールの動きを確認するため、div要素に幅を持たせています */
+/* Topに戻るためのリンクを画面右下に固定しています */
+.pagetop {
+  display: inline-block;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.pagetop {
+  padding: 10px 5px;
+  display: block;
+  color: #3ba6c9;
+  text-align: center;
+  border: #f2f2f2;
+  -webkit-box-shadow: 3px 3px 3px 3px #f2f2f2;
+          box-shadow: 3px 3px 3px 3px #f2f2f2;
+  z-index: 9999;
+}
+
 .wrap {
   overflow: hidden;
+}
+
+.pc-br {
+  display: block;
+}
+
+.sp-br {
+  display: none;
 }
 
 .main .main-ttl {
@@ -303,7 +342,7 @@
 
 .main {
   background-image: url(/image/1.png);
-  background-position: top -200px right 0px;
+  background-position: top -200px right -50px;
   background-size: 800px;
   background-repeat: no-repeat;
   position: relative;
@@ -328,9 +367,9 @@
 
 .main-copy h2 {
   font-size: 32px;
-  line-height: 1.8;
   margin-bottom: 40px;
   font-weight: bold;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .main-copy p {
@@ -568,6 +607,7 @@
 }
 
 .blog-wrapper .blog-box {
+  display: block;
   width: calc(33.33333% - 25px * 2 / 3);
   margin-right: 25px;
   border: 1px solid #EEFBFB;
@@ -577,14 +617,18 @@
           box-shadow: 2px 2px 4px 2px #EEFBFB;
   background-color: #fff;
   font-weight: bold;
-  height: 370px;
+  height: 100%;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .blog-wrapper .blog-box .blog-box-info {
-  padding: 5px 5px;
+  padding: 10px 5px;
   font-weight: bold;
+}
+
+.blog-wrapper .blog-box .blog-pb {
+  padding-bottom: 34px;
 }
 
 .blog-wrapper .blog-box time {
@@ -595,12 +639,10 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 70%;
 }
 
 .blog-wrapper .blog-box .blog-box-img img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -619,6 +661,10 @@
 .blog-wrapper .blog-box .blog-box-link {
   color: #333;
   font-size: 1rem;
+  height: 100%;
+}
+
+.blog-wrapper .blog-box .blog-box-link .blog-txt-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -626,9 +672,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .blog time {
@@ -790,6 +836,10 @@
   display: none;
 }
 
+input:invalid {
+  border: solid 1px red;
+}
+
 .footer {
   padding: 40px 20px;
   text-align: center;
@@ -819,5 +869,11 @@
 
 .contact-btn-form {
   padding-bottom: px;
+}
+
+.feature,
+.price,
+.contact {
+  padding-top: 100px;
 }
 /*# sourceMappingURL=style.css.map */
